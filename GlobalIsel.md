@@ -24,3 +24,10 @@ Clang will output remarks about failures, i.e.:
 ```shell
 remark: unable to legalize instruction: %151:_(<4 x s64>) = G_CTPOP %149:_(<4 x s64>) [-Rpass-missed=gisel-legalize]
 ```
+
+# Tablegen import
+
+```shell
+ ./bin/llvm-tblgen -gen-global-isel -warn-on-skipped-patterns -I llvm/lib/Target/AArch64 -I include -Illvm/include -Illvm/lib/Target llvm/lib/Target/AArch64/AArch64.td -o AArch64.inc
+```
+
