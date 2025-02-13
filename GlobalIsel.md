@@ -31,3 +31,16 @@ remark: unable to legalize instruction: %151:_(<4 x s64>) = G_CTPOP %149:_(<4 x 
  ./bin/llvm-tblgen -gen-global-isel -warn-on-skipped-patterns -I llvm/lib/Target/AArch64 -I include -Illvm/include -Illvm/lib/Target llvm/lib/Target/AArch64/AArch64.td -o AArch64.inc
 ```
 
+```
+./bin/llvm-tblgen -gen-global-isel -warn-on-skipped-patterns -stats -I llvm/lib/Target/AMDGPU -I include -I llvm/include -I llvm/lib/Target llvm/lib/Target/AMDGPU/AMDGPUGISel.td -o AMDGPUGenGlobalISel.inc  2> result-amdgpu.txt
+```
+
+```
+./bin/llvm-tblgen -gen-global-isel -warn-on-skipped-patterns -stats -I llvm/lib/Target/AArch64 -I include -Illvm/include -Illvm/lib/Target llvm/lib/Target/AArch64/AArch64.td -o AArch64.inc 2> result.txt
+```
+
+```
+./bin/llvm-tblgen -gen-global-isel  -warn-on-skipped-patterns -stats -I llvm/lib/Target/RISCV -I include -Illvm/include -Illvm/lib/Target llvm/lib/Target/RISCV/RISCVGISel.td -o RISCVGenGlobalISel.inc 2> result-riscv.txt
+```
+
+
