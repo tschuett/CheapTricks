@@ -43,4 +43,9 @@ remark: unable to legalize instruction: %151:_(<4 x s64>) = G_CTPOP %149:_(<4 x 
 ./bin/llvm-tblgen -gen-global-isel  -warn-on-skipped-patterns -stats -I llvm/lib/Target/RISCV -I include -Illvm/include -Illvm/lib/Target llvm/lib/Target/RISCV/RISCVGISel.td -o RISCVGenGlobalISel.inc 2> result-riscv.txt
 ```
 
+# Sqlite
+
+```
+llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" sqlite3.ll
+```
 
