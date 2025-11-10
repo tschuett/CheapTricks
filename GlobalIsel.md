@@ -46,6 +46,7 @@ remark: unable to legalize instruction: %151:_(<4 x s64>) = G_CTPOP %149:_(<4 x 
 # Sqlite
 
 ```
+clang --target=arm64-apple-darwin24.4.0 -mcpu=apple-m4 -S ../sqlite-amalgamation-3500400/sqlite3.c -O3 -emit-llvm
 llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" sqlite3.ll
 ```
 
