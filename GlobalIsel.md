@@ -53,5 +53,6 @@ llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-c
 # Sema
 ```
 clang --target=arm64-apple-darwin24.4.0 -mcpu=apple-m4 -std=c++17 -Itools/clang/include -Iinclude -Illvm/include -Iclang/include -S clang/lib/Sema/Sema.cpp -O3 -emit-llvm
+remove "probe-stack"="__chkstk_darwin"
 ```
 
