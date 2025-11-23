@@ -57,3 +57,9 @@ remove "probe-stack"="__chkstk_darwin"
 llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" Sema.ll
 ```
 
+# AArch64ISelLowering
+```
+clang --target=arm64-apple-darwin24.4.0 -mcpu=apple-m4  -std=c++17 -Ilib/Target/AArch64 -Itools/clang/include -Iinclude -Illvm/include  -Illvm/lib/Target/AArch64 -S llvm/lib/Target/AArch64/AArch64ISelLowering.cpp -O3 -emit-llvm
+llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" AArch64ISelLowering.ll
+```
+
