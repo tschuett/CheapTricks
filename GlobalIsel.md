@@ -63,3 +63,10 @@ clang --target=arm64-apple-darwin24.4.0 -mcpu=apple-m4  -std=c++17 -Ilib/Target/
 llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" AArch64ISelLowering.ll
 ```
 
+# AMDGPUISelLowering
+```
+clang --target=arm64-apple-darwin24.4.0 -mcpu=apple-m4 -Iinclude -Illvm/include -std=c++17 -Illvm/lib/Target/AMDGPU -Ilib/Target/AMDGPU -S llvm/lib/Target/AMDGPU/AMDGPUISelLowering.cpp -O3 -emit-llvm
+```
+
+
+
