@@ -70,5 +70,10 @@ remove "probe-stack"="__chkstk_darwin"
 llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" AMDGPUISelLowering.ll
 ```
 
-
-
+# RISCV
+```
+clang --target=arm64-apple-darwin24.4.0 -mcpu=apple-m4 -Iinclude -Illvm/include -std=c++17 -Illvm/lib/Target/RISCV -Ilib/Target/RISCV -S llvm/lib/Target/RISCV/RISCVISelLowering.cpp -O3 -emit-llvm
+remove "probe-stack"="__chkstk_darwin"
+llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" RISCVISelLowering.ll
+````
+```
