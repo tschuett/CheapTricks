@@ -77,3 +77,11 @@ remove "probe-stack"="__chkstk_darwin"
 llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" RISCVISelLowering.ll
 ````
 ```
+
+# SemaOpenmp
+```
+clang -std=c++17 -S clang/lib/Sema/SemaOpenMP.cpp -Iclang/include -Itools/clang/include -I./include -Illvm/include -O3 -emit-llvm
+```
+
+
+
