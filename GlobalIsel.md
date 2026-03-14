@@ -86,7 +86,9 @@ clang -std=c++17 -S clang/lib/Sema/SemaOpenMP.cpp -Iclang/include -Itools/clang/
 # X86ISelLowering
 
 ```
-clang -std=c++17 -S llvm/lib/Target/X86/X86ISelLowering.cpp  -I./include -Ilib/Target/X86 -Illvm/include -O3 -emit-llvm
+bin/clang -isysroot $(xcrun --show-sdk-path) --target=arm64-apple-darwin24.4.0 -std=c++17 -S llvm/lib/Target/X86/X86ISelLowering.cpp -I./include -Ilib/Target/X86 -Illvm/include -O3 -emit-llvm
+bin/llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="aarch64-prelegalizer-combiner" X86ISelLowering.ll
+bin/llc -mtriple=aarch64-linux-gnu --global-isel -stop-after="legalizer" X86ISelLowering.ll -o x86-after-legalizer.s
 ```
 
 
